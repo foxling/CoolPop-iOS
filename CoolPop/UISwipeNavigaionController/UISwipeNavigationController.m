@@ -101,7 +101,8 @@ static NSString *const snapShotViewKey = @"snapShotViewKey";
     if ([self.viewControllers count]> 0 && [viewController respondsToSelector:@selector(isSupportSwipePop)]) {
         BOOL returnValue = ((BOOL (*)(id, SEL))objc_msgSend)(viewController, @selector(isSupportSwipePop));
         if (returnValue) {
-            UIImage *image = [UIImage imageFromUIView:self.view];
+            UITabBarController *t = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+            UIImage *image = [UIImage imageFromUIView:t.view];
             [self saveSnapshot:image forViewController:viewController];
         }
     }
