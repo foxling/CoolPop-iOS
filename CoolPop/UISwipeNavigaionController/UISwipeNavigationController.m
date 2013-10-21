@@ -74,8 +74,6 @@ static NSString *const snapShotViewKey = @"snapShotViewKey";
     UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     gestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:gestureRecognizer];
-    [gestureRecognizer release];
-    
 }
 
 - (IBAction)handlePan:(UIPanGestureRecognizer *)gestureRecognizer {
@@ -332,7 +330,6 @@ static NSString *const snapShotViewKey = @"snapShotViewKey";
 
 - (void)dealloc {
     self.leftSnapshotView = nil;
-    [super dealloc];
 }
 
 @end
